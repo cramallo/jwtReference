@@ -2,11 +2,9 @@ package com.woloxJwt.woloxJwt.security;
 
 import com.woloxJwt.woloxJwt.errors.AuthenticationException;
 import com.woloxJwt.woloxJwt.errors.AuthenticationHandlerError;
-import com.woloxJwt.woloxJwt.services.ApplicationUserDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,9 +22,6 @@ import java.util.ArrayList;
 import static com.woloxJwt.woloxJwt.constants.SecurityConstants.*;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
-
-    @Autowired
-    ApplicationUserDetailsService applicationUserDetailsService;
 
     public AuthorizationFilter(AuthenticationManager authManager) {
         super(authManager);
